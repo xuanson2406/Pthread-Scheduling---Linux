@@ -34,8 +34,9 @@ pthread_mutex_destroy(&lock);
 /* Each thread will begin control in this function */ 
 void *runner(void *param){
 	pthread_mutex_lock(&lock);
-	printf("This is thread %d ! \n", i);
+	printf("Begin task in thread %d \n", i);
 	i++;
+	printf("End task in thread %d \n", i - 1);
 	pthread_mutex_unlock(&lock);
 	pthread_exit(0);
 }
